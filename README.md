@@ -1,16 +1,88 @@
-# React + Vite
+#AfroElegance#
+---
+**Overview**
+AfroElegance is a frontend project for *ALXAfrica* FE Capstone. The goal is to build an e-commerce, a polished, responsive web interface that showcases brand assets, highlights core features, and delivers a clean, accessible user experience. The project uses modern frontend tooling and component-driven development to create a scalable UI that can be extended into a multi-page application.
+My goal is to build this web app purposely for the sewing or fashion designing industry, the project emphasizes given the people in this industry the platform to showcase and sell their products.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+##Features##
+Responsive landing page with hero section and feature highlights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Header and navigation with accessible, responsive layout.
 
-## React Compiler
+Feature section for product or service cards and calls to action.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Reusable components for consistent UI patterns (cards, buttons, form controls).
 
-## Expanding the ESLint configuration
+Client side routing for multi-page navigation and future expansion.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Centralized asset management for images and icons.
+
+
+##Tech Stack##
+React — component driven UI
+
+Tailwind CSS — utility-first styling and responsive utilities
+
+React Router — client side routing and navigation
+
+Vite — fast development server and build tool
+
+Git and GitHub — version control and remote hosting
+
+
+##Getting Started##
+Clone the repository
+
+bash
+git clone https://github.com/KelvinBamfo/AfroElegance.git
+cd AfroElegance
+Install dependencies
+
+bash
+npm install
+# or
+yarn
+Run development server
+
+bash
+npm run dev
+# or
+yarn dev
+Build for production
+
+bash
+npm run build
+# or
+yarn build
+
+
+##Project Structure##
+src/ — application source code
+
+The *src* directory houses all the project section where all the reusable components components will be hosted. 
+The scetions are 
+- HomeSection
+- ContactSection
+- CartSection
+- ReviewSection
+- ShopSection 
+- assets
+
+
+tailwind.config.js — Tailwind configuration
+
+package.json — scripts and dependencies
+
+Contributing
+Fork the repository
+
+Create a branch git checkout -b feat/your-feature
+
+Commit changes git commit -m "feat: description"
+
+Push and open a pull request
+
+Contact
+Owner: Kelvin Bamfo
+Repository: https://github.com/KelvinBamfo/AfroElegance (github.com in Bing)
