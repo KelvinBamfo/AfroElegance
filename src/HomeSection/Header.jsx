@@ -1,3 +1,4 @@
+// Header.jsx (small change only)
 import React, { useState } from "react";
 
 const navLinks = [
@@ -12,7 +13,8 @@ export default function Header({ cartCount = 0 }) {
   return (
     <header className="bg-white shadow-md dark:bg-neutral-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between py-3">
+        {/* Added explicit height classes h-16 md:h-20 */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between py-3 h-16 md:h-20">
           <div className="flex items-center justify-between">
             <a
               href="/"
@@ -37,12 +39,7 @@ export default function Header({ cartCount = 0 }) {
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
                 <svg
@@ -52,12 +49,7 @@ export default function Header({ cartCount = 0 }) {
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
@@ -65,11 +57,7 @@ export default function Header({ cartCount = 0 }) {
 
           <nav
             id="mobile-menu"
-            className={`
-              ${menuOpen ? "block" : "hidden"}
-              md:block
-              transition-all duration-300
-            `}
+            className={`${menuOpen ? "block" : "hidden"} md:block transition-all duration-300`}
             aria-label="Main navigation"
           >
             <ul
@@ -111,19 +99,8 @@ export default function Header({ cartCount = 0 }) {
                   `}
                   aria-label={`Cart${cartCount > 0 ? ` with ${cartCount} items` : ""}`}
                 >
-                  <svg
-                    className="w-6 h-6 mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9m-5-9V6a2 2 0 10-4 0v3"
-                    />
+                  <svg className="w-6 h-6 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9m-5-9V6a2 2 0 10-4 0v3" />
                   </svg>
                   Cart
                   {cartCount > 0 && (

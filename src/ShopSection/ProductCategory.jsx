@@ -1,10 +1,10 @@
 import React from "react";
 import Products from "../ShopSection/Products";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-const Featured = () => (
+
+const Category = () => (
   <section
-    aria-labelledby="featured-heading"
+    aria-labelledby="Category"
     className="bg-white py-12 md:py-16"
   >
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,23 +12,13 @@ const Featured = () => (
         id="featured-heading"
         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 text-center md:text-left mb-2"
       >
-        Featured Collection
+        Shop by category 
       </h2>
       <p className="text-base sm:text-lg md:text-xl font-normal text-gray-600 leading-relaxed max-w-2xl mx-auto md:mx-0 text-center md:text-left mb-8">
-        Handpicked pieces that define elegance and sophistication
+        Find your desired fit 
       </p>
       <div className="mb-10">
         <Products />
-      </div>
-      <div className="flex justify-center md:justify-start">
-        <a
-          href="/products"
-          className="group inline-flex items-center font-semibold text-amber-600 hover:text-amber-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 transition-colors duration-200 underline-animation"
-          aria-label="View all products"
-        >
-          View all products
-          <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"/>
-        </a>
       </div>
     </div>
     <style jsx>{`
@@ -61,4 +51,4 @@ const Featured = () => (
   </section>
 );
 
-export default Featured;
+export default Category;
