@@ -7,8 +7,8 @@ const productCategories = [
     slug: 'straight-dresses',
     image: '/items/product-2.jpg',
     images: [
-            '/items/product-3.jpg',
-    ]
+      '/items/product-3.jpg'
+    ],
     title: 'Straight Dresses',
     description:
       'A modern silhouette crafted from authentic Ghanaian Kente, celebrating tradition and innovation.',
@@ -18,11 +18,11 @@ const productCategories = [
     slug: 'women-shorts',
     image: '/images/beaded-blazer.jpg',
     images: [
-            '/tiems/shorts.jpg'
-            '/tiems/shorts1.jpg'
-            '/tiems/shorts2.jpg'
-            '/tiems/shorts3.jpg'
-    ]
+      '/items/shorts.jpg',
+      '/items/shorts1.jpg',
+      '/items/shorts2.jpg',
+      '/items/shorts3.jpg'
+    ],
     title: 'Women Shorts',
     description:
       'Hand-beaded lapels and a tailored fit—where Afrocentric artistry meets contemporary style.',
@@ -32,8 +32,8 @@ const productCategories = [
     slug: 'skirts',
     image: '/items/skirt.jpg',
     images: [
-            '/tiems/skirt.jpg'
-    ]
+      '/items/skirt.jpg'
+    ],
     title: 'Skirts',
     description:
       'Vivid geometric prints inspired by South Africa’s Ndebele heritage, reimagined for today.',
@@ -43,14 +43,13 @@ const productCategories = [
     slug: 'tops',
     image: '/items/product-2.jpg',
     images: [
-            '/items/product-4.jpg',
-    ]
+      '/items/product-4.jpg'
+    ],
     title: 'Tops',
     description:
       'Classic Shweshwe fabric, elevated with modern tailoring and subtle gold accents.',
   },
 ];
-
 
 const brandRing = 'focus:ring-2 focus:ring-brand focus:outline-none';
 
@@ -84,7 +83,7 @@ function ProductCard({ image, title, description, slug }) {
         <p className="text-gray-600 text-base flex-1">{description}</p>
         <Link to={`/category/${slug}`} className="mt-6 inline-block self-start px-5 py-2 rounded-lg bg-brand text-white font-medium shadow transition-all duration-200 hover:bg-accent hover:shadow-lg" >
           View Details
-        </button>
+        </Link>
       </div>
     </article>
   );
@@ -97,7 +96,7 @@ function ProductCategories() {
         Discover AfroElegance
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {productCategory.map((category) => (
+        {productCategories.map((category) => (
           <ProductCard
             key={category.id}
             image={category.image}

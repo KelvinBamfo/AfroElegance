@@ -1,7 +1,7 @@
 import Header from './HomeSection/Header'
 import Body from './HomeSection/BodyPage'
 import Featured from './HomeSection/FeaturedPage'
-import Category from './ShopSection/ProductCategory'
+import ProductCategories from './ShopSection/Categories'
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <Header />
     <Body />
     <Featured />
-    <Category />
+    <ProductCategories />
   </>
   );
 
