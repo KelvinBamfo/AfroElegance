@@ -26,7 +26,7 @@ function Body() {
 
           <a
             href="#shop"
-            className="inline-block mt-8 px-8 py-3 md:px-10 md:py-4 bg-gradient-to-r from-yellow-700 via-yellow-600 to-amber-500 text-white font-semibold rounded-full shadow-lg hover:brightness-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400"
+            className="inline-block mt-8 px-8 py-3 md:px-10 md:py-4 bg-linear-to-r from-yellow-700 via-yellow-600 to-amber-500 text-white font-semibold rounded-full shadow-lg hover:brightness-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400"
           >
             Shop collection
           </a>

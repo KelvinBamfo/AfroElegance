@@ -5,49 +5,48 @@ const productCategories = [
   {
     id: 1,
     slug: 'straight-dresses',
-    image: '/items/product-2.jpg',
+    image: '/items/red-dress.png',
     images: [
-      '/items/product-3.jpg'
+      '/items/slit-dress.png',
+      '/items/dress.png',
+      '/items/dress1.png',
+      '/items/dress2.png',
+      '/items/dress3.png',
+      '/items/dress4.png',
     ],
     title: 'Straight Dresses',
-    description:
-      'A modern silhouette crafted from authentic Ghanaian Kente, celebrating tradition and innovation.',
   },
   {
     id: 2,
     slug: 'women-shorts',
-    image: '/images/beaded-blazer.jpg',
+    image: '/items/shorts.png',
     images: [
-      '/items/shorts.jpg',
-      '/items/shorts1.jpg',
-      '/items/shorts2.jpg',
-      '/items/shorts3.jpg'
+      '/items/shorts1.png',
+      '/items/shorts2.png',
+      '/items/shorts3.png',
     ],
     title: 'Women Shorts',
-    description:
-      'Hand-beaded lapels and a tailored fit—where Afrocentric artistry meets contemporary style.',
   },
   {
     id: 3,
     slug: 'skirts',
-    image: '/items/skirt.jpg',
+    image: '/items/skirt.png',
     images: [
-      '/items/skirt.jpg'
+      '/items/skirt2.png',
+      '/items/skirt3.png',
+      '/items/skirt4.png',
     ],
     title: 'Skirts',
-    description:
-      'Vivid geometric prints inspired by South Africa’s Ndebele heritage, reimagined for today.',
   },
   {
     id: 4,
     slug: 'tops',
-    image: '/items/product-2.jpg',
+    image: '/items/top1.png',
     images: [
-      '/items/product-4.jpg'
+      '/items/top.png',
+      '/items/top2.png',
     ],
     title: 'Tops',
-    description:
-      'Classic Shweshwe fabric, elevated with modern tailoring and subtle gold accents.',
   },
 ];
 

@@ -2,27 +2,27 @@ import React from 'react';
 const products = [
   {
     id: 1,
-    image: '/images/kente-dress.jpg',
-    title: 'Kente Heritage Dress',
-    description: 'A modern silhouette crafted from authentic Ghanaian Kente, celebrating tradition and innovation.',
+    image: '/items/red-dress.png',
+    title: 'Modern Straight Dress',
+    description: 'A modern straight dress outfits design to with African colors to enhance beauty and promote African culture.',
   },
   {
     id: 2,
-    image: '/images/beaded-blazer.jpg',
-    title: 'Beaded Elegance Blazer',
-    description: 'Hand-beaded lapels and a tailored fit—where Afrocentric artistry meets contemporary style.',
+    image: '/items/dress.png',
+    title: 'Elegant Straight-flair Dress',
+    description: 'Classic intercultural inspired dress, suitable for for office, meeting and many other events.',
   },
   {
     id: 3,
-    image: '/images/ndebele-skirt.jpg',
+    image: '/items/skirt.png',
     title: 'Ndebele Pattern Skirt',
-    description: 'Vivid geometric prints inspired by South Africa’s Ndebele heritage, reimagined for today.',
+    description: 'Vivid geometric prints inspired by South Africa Ndebele heritage, reimagined for today.',
   },
   {
     id: 4,
-    image: '/images/shweshwe-top.jpg',
-    title: 'Shweshwe Luxe Top',
-    description: 'Classic Shweshwe fabric, elevated with modern tailoring and subtle gold accents.',
+    image: '/items/short3.png',
+    title: 'Classy Short',
+    description: 'Beautiful Ghanaian cultural colors inspired short.',
   },
 ];
 
