@@ -1,6 +1,7 @@
 import React from "react";
 import Products from "../ShopSection/Products";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const Featured = () => (
   <section
@@ -21,14 +22,14 @@ const Featured = () => (
         <Products />
       </div>
       <div className="flex justify-center md:justify-start">
-        <a
-          href="/products"
+        <Link
+          to="/shop"
           className="group inline-flex items-center font-semibold text-amber-600 hover:text-amber-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 transition-colors duration-200 underline-animation"
           aria-label="View all products"
         >
           View all products
           <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"/>
-        </a>
+        </Link>
       </div>
     </div>
     <style jsx>{`

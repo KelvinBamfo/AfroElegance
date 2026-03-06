@@ -1,56 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const productCategories = [
-  {
-    id: 1,
-    slug: 'straight-dresses',
-    image: '/items/red-dress.png',
-    images: [
-      '/items/slit-dress.png',
-      '/items/dress.png',
-      '/items/dress1.png',
-      '/items/dress2.png',
-      '/items/dress3.png',
-      '/items/dress4.png',
-    ],
-    title: 'Straight Dresses',
-  },
-  {
-    id: 2,
-    slug: 'women-shorts',
-    image: '/items/shorts.png',
-    images: [
-      '/items/shorts1.png',
-      '/items/shorts2.png',
-      '/items/shorts3.png',
-    ],
-    title: 'Women Shorts',
-  },
-  {
-    id: 3,
-    slug: 'skirts',
-    image: '/items/skirt.png',
-    images: [
-      '/items/skirt2.png',
-      '/items/skirt3.png',
-      '/items/skirt4.png',
-    ],
-    title: 'Skirts',
-  },
-  {
-    id: 4,
-    slug: 'tops',
-    image: '/items/top1.png',
-    images: [
-      '/items/top.png',
-      '/items/top2.png',
-    ],
-    title: 'Tops',
-  },
-];
-
-const brandRing = 'focus:ring-2 focus:ring-brand focus:outline-none';
+import productCategories from "../data/productCategories";
 
 function ProductCard({ image, title, description, slug }) {
   return (
@@ -80,7 +30,7 @@ function ProductCard({ image, title, description, slug }) {
           {title}
         </h3>
         <p className="text-gray-600 text-base flex-1">{description}</p>
-        <Link to={`/category/${slug}`} className="mt-6 inline-block self-start px-5 py-2 rounded-lg bg-brand text-white font-medium shadow transition-all duration-200 hover:bg-accent hover:shadow-lg" >
+        <Link to={`/productCategories/${slug}`} className="mt-6 inline-block self-start px-5 py-2 rounded-lg bg-brand text-black font-medium shadow transition-all duration-200 hover:bg-accent hover:shadow-lg" >
           View Details
         </Link>
       </div>
@@ -101,6 +51,7 @@ function ProductCategories() {
             image={category.image}
             title={category.title}
             description={category.description}
+            slug={category.slug}
           />
         ))}
       </div>
@@ -108,4 +59,4 @@ function ProductCategories() {
   );
 }
 
-export default ProductCategories
+export default ProductCategories;

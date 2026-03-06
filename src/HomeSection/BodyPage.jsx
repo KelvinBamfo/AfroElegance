@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Body() {
   return (
@@ -7,7 +8,7 @@ function Body() {
         id="home"
         className="
           relative
-          bg-[url('images/bak.png')]
+          bg-stone-900
           bg-cover bg-top md:bg-center bg-no-repeat
           min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)]
           flex items-center justify-center
@@ -24,12 +25,12 @@ function Body() {
             Explore our beautiful clothings
           </p>
 
-          <a
-            href="#shop"
+          <Link
+            to="/shop"
             className="inline-block mt-8 px-8 py-3 md:px-10 md:py-4 bg-linear-to-r from-yellow-700 via-yellow-600 to-amber-500 text-white font-semibold rounded-full shadow-lg hover:brightness-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400"
           >
             Shop collection
-          </a>
+          </Link>
         </section>
       </div>
     </>

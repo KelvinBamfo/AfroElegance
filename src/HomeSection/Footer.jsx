@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Footer() {
   return (
     <footer className="bg-gray-900 text-white px-6 py-10">
@@ -14,14 +16,20 @@ function Footer() {
           <h2 className="text-lg font-semibold mb-2">Shop</h2>
           <ul className="space-y-1">
             <li>
-              <a href="#" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white">
+              <Link
+                to="/Shop"
+                className="hover:underline focus:outline-none focus:ring-2 focus:ring-white"
+              >
                 All Products
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white">
+              <Link
+                to="/Shop"
+                className="hover:underline focus:outline-none focus:ring-2 focus:ring-white"
+              >
                 New Arrivals
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -30,9 +38,12 @@ function Footer() {
           <h2 className="text-lg font-semibold mb-2">Customer Service</h2>
           <ul className="space-y-1">
             <li>
-              <a href="#" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white">
+              <Link
+                to="/Contact"
+                className="hover:underline focus:outline-none focus:ring-2 focus:ring-white"
+              >
                 Contact Us
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white">
@@ -106,6 +117,9 @@ function Footer() {
               </a>
             </li>
           </ul>
+        </div>
+        <div className="bg-gray-900 text-white py-4 text-sm md:flex md:text-center">
+          <p className="text-center md:justify-center"> &copy; 2026 AfroElegance. All rights reserved</p>
         </div>
       </div>
     </footer>
