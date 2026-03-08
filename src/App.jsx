@@ -9,7 +9,8 @@ import Contact from './ContactSection/Contact';
 import Cart from './CartSection/Cart';
 import CategoryPage from './ShopSection/CategoryPage';
 import Help from './ContactSection/HelpSection';
-import CartProvider from './CartSection/CartContext'
+import CartProvider from './CartSection/CartContext';
+import Checkout from './CartSection/PaymentCheckout';
 
 function HomePage() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/productCategories/:slug" element={<CategoryPage />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
       </CartProvider>

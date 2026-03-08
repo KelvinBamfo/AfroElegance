@@ -11,10 +11,9 @@ export default function Header({ cartCount = 0 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md dark:bg-neutral-900 transition-colors">
+    <header className="bg-black shadow-md dark:bg-neutral-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between py-3 h-16 md:h-20">
-          {/* Logo + Mobile Menu Toggle */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between py-3 md:h-20">
           <div className="flex items-center justify-between">
             <Link
               to="/"
@@ -25,7 +24,7 @@ export default function Header({ cartCount = 0 }) {
             </Link>
             <button
               type="button"
-              className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-100"
               aria-controls="mobile-menu"
               aria-expanded={menuOpen}
               aria-label={menuOpen ? "Close main menu" : "Open main menu"}
@@ -33,7 +32,7 @@ export default function Header({ cartCount = 0 }) {
             >
               {menuOpen ? (
                 <svg
-                  className="w-6 h-6 text-yellow-700 dark:text-yellow-400"
+                  className="w-6 h-6 text-yellow-700 dark:text-yellow-100"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -48,7 +47,7 @@ export default function Header({ cartCount = 0 }) {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 text-yellow-700 dark:text-yellow-400"
+                  className="w-6 h-6 text-yellow-700 dark:text-yellow-100"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -64,25 +63,25 @@ export default function Header({ cartCount = 0 }) {
               )}
             </button>
           </div>
+        
 
-          {/* Navigation */}
           <nav
             id="mobile-menu"
-            className={`${menuOpen ? "block" : "hidden"} md:block`}
+            className={`${menuOpen ? "block" : "hidden"} md:block z-20 relative`}
             aria-label="Main navigation"
           >
-            <ul className="flex flex-col md:flex-row md:items-center mt-2 md:mt-0 space-y-2 md:space-y-0 md:space-x-8 text-base font-medium">
+            <ul className="flex flex-col md:flex-row md:items-center mt-2 md:mt-0 md:space-y-0 md:space-x-8 text-base font-medium">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="block px-3 py-2 rounded-md text-yellow-900 dark:text-yellow-400 hover:bg-yellow-200 hover:text-yellow-900 dark:hover:bg-yellow-200 dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    className="block px-3 py-2 rounded-md text-yellow-900 dark:text-yellow-400 hover:bg-yellow-100 hover:text-yellow-900 dark:hover:bg-yellow-100 dark:hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-100"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
-              {/* Cart */}
+
               <li className="md:ml-8 mt-2 md:mt-0">
                 <Link
                   to="/cart"
@@ -105,7 +104,7 @@ export default function Header({ cartCount = 0 }) {
                   </svg>
                   Cart
                   {cartCount > 0 && (
-                    <span className="absolute -top-1 -right-2 min-w-[1.25rem] h-5 bg-red-600 text-white text-xs font-bold rounded-full flex items-center justify-center px-1.5 border-2 border-white dark:border-neutral-900 shadow transition-all">
+                    <span className="absolute -top-1 -right-2 min-w-5 h-5 bg-red-600 text-white text-xs font-bold rounded-full flex items-center justify-center px-1.5 border-2 border-white dark:border-neutral-900 shadow transition-all">
                       {cartCount}
                     </span>
                   )}
@@ -116,7 +115,6 @@ export default function Header({ cartCount = 0 }) {
         </div>
       </div>
 
-      {/* Mobile Overlay */}
       {menuOpen && (
         <div
           className="fixed inset-0 z-10 bg-black/10 md:hidden"

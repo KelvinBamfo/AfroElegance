@@ -8,7 +8,7 @@ function Body() {
         id="home"
         className="
           relative
-          bg-stone-900
+          bg-cyan-300
           bg-cover bg-top md:bg-center bg-no-repeat
           min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)]
           flex items-center justify-center
