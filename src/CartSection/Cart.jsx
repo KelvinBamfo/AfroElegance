@@ -1,4 +1,6 @@
 import { useCart } from "./CartContext";
+import Checkout from "./PaymentCheckout";
+import PaystackButton from "./PaystackButton";
 
 function Cart() {
   const { cart, removeFromCart, clearCart } = useCart();
@@ -16,7 +18,7 @@ function Cart() {
           Your cart is empty.
         </p>
       )}
-
+    
       <div className="space-y-4">
         {cart.map((item) => (
           <div
@@ -45,7 +47,7 @@ function Cart() {
           </div>
         ))}
       </div>
-
+    
       {cart.length > 0 && (
         <div className="mt-10 bg-gray-50 p-6 rounded-lg shadow-inner">
           <div className="flex justify-between text-xl font-semibold text-gray-900 mb-6">
@@ -62,7 +64,11 @@ function Cart() {
           >
             Clear Cart
           </button>
+          <div>
+              <Checkout />
+          </div>
         </div>
+        
       )}
     </section>
   );
