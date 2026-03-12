@@ -97,7 +97,7 @@ function Header({ cartCount = 0 }) {
                   </svg>
                   Cart
                   {cartCount > 0 && (
-                    <span className="absolute -top-1 -right-2 min-w-[1.25rem] h-5 bg-red-600 text-white text-xs font-bold rounded-full flex items-center justify-center px-1.5 border-2 border-white dark:border-neutral-900 shadow">
+                    <span className="absolute -top-1 -right-2 min-w-5 h-5 bg-red-600 text-white text-xs font-bold rounded-full flex items-center justify-center px-1.5 border-2 border-white dark:border-neutral-900 shadow">
                       {cartCount}
                     </span>
                   )}
@@ -121,4 +121,3 @@ function Header({ cartCount = 0 }) {
 }
 
 export default Header;
-

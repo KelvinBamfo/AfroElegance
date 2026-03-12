@@ -1,25 +1,83 @@
+import { useState } from "react";
 import { PaystackButton } from "react-paystack";
 import { useCart } from "../CartSection/CartContext";
 
 function Checkout() {
   const { cart, total } = useCart();
-  const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
+
+  const [customer, setCustomer] = useState({
+    name: "",
+    email: "",
+    number: "",
+  });
+
+  const publicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY;
+
+  const handleSuccess = async (reference) => {
+    try {
+      const response = await fetch("http://localhost:5000/api/paystack/verify-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reference }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Payment verified! Order completed.");
+      } else {
+        alert("Verification failed.");
+      }
+    } catch (error) {
+      console.error("Verification error:", error);
+      alert("Something went wrong verifying payment.");
+    }
+  };
 
   const componentProps = {
-    email: "customer@example.com",
-    amount: total * 100, // Paystack uses pesewas
+    email: customer.email,
+    amount: total * 100, // pesewas
     currency: "GHS",
-    metadata: { cart },
     publicKey,
-    text: "Pay with Paystack",
-    onSuccess: () => alert("Payment Successful!"),
-    onClose: () => alert("Payment Cancelled."),
+    text: "Pay Now",
+    metadata: {
+      customer_name: customer.name,
+      customer_phone: customer.number,
+      cart_items: cart,
+    },
+    onSuccess: handleSuccess,
+    onClose: () => alert("Payment cancelled."),
   };
 
   return (
-    <section className="max-w-3xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-4">Checkout</h2>
+    <section className="max-w-3xl mx-auto p-6 space-y-6">
+      <h2 className="text-2xl font-bold">Checkout</h2>
 
+      {/* Customer Info */}
+      <div className="bg-white p-4 rounded shadow space-y-4">
+        <input
+          type="text"
+          placeholder="Your Name"
+          className="w-full border px-4 py-2 rounded"
+          onChange={(e) => setCustomer({ ...customer, name: e.target.value })}
+        />
+
+        <input
+          type="email"
+          placeholder="Your Email"
+          className="w-full border px-4 py-2 rounded"
+          onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
+        />
+
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          className="w-full border px-4 py-2 rounded"
+          onChange={(e) => setCustomer({ ...customer, number: e.target.value })}
+        />
+      </div>
+
+      {/* Cart Summary */}
       <div className="bg-white p-4 rounded shadow">
         {cart.map((item) => (
           <div key={item.id} className="flex justify-between py-2">
