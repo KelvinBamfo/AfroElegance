@@ -1,10 +1,11 @@
 import { useState } from "react";
 import PaystackButton from "./PaystackButton";
 
-export default function Checkout() {
+function Checkout() {
   const [customer, setCustomer] = useState({
     name: "",
     email: "",
+    number: 0,
     amount: 0,
   });
 
@@ -16,14 +17,18 @@ export default function Checkout() {
         body: JSON.stringify({ reference }),
       });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      alert("Payment verified! Order completed.");
-    } else {
-      alert("Verification failed.");
+      if (data.success) {
+        alert("Payment verified! Order completed.");
+      } else {
+        alert("Verification failed.");
+      }
+    } catch (error) {
+      console.error("Verification error:", error);
+      alert("Something went wrong verifying payment.");
     }
-  };
+  }; 
 
   return (
     <div className="max-w-lg mx-auto bg-white shadow-lg rounded-xl p-6 space-y-6">
@@ -44,6 +49,13 @@ export default function Checkout() {
       />
 
       <input
+        type="digits"
+        placeholder="Your phone number"
+        className="w-full border px-4 py-2 rounded"
+        onChange={(e) => setCustomer({ ...customer, amount: e.target.value })}
+      />
+
+      <input
         type="number"
         placeholder="Amount (GHS)"
         className="w-full border px-4 py-2 rounded"
@@ -60,3 +72,4 @@ export default function Checkout() {
   );
 }
 
+export default Checkout;

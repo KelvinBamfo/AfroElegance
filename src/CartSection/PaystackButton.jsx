@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PaystackButton({ amount, email, name, onSuccess }) {
+function PaystackButton({ amount, email, name, onSuccess }) {
   const paystackPublicKey = "pk_test_99a01cfaf69bba4b552da38cdd34e027fd9cc5ad";
 
   const handlePay = () => {
@@ -38,3 +38,5 @@ export default function PaystackButton({ amount, email, name, onSuccess }) {
     </button>
   );
 }
+
+export default PaystackButton;
