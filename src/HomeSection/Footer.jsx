@@ -46,14 +46,18 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white">
+              <Link to="#" 
+                className="hover:underline focus:outline-none focus:ring-2 focus:ring-white"
+              >
                 Delivery Info
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white">
+              <Link to="#" 
+              className="hover:underline focus:outline-none focus:ring-2 focus:ring-white"
+              >
                 FAQs
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
