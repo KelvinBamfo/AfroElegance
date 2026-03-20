@@ -61,7 +61,7 @@ function Header({ cartCount = 0 }) {
           {/* Navigation */}
           <nav
             id="mobile-menu"
-            className={`${menuOpen ? "block" : "hidden"} md:block w-full md:w-auto`}
+            className={`${menuOpen ? "block" : "hidden"} md:block w-full md:w-auto relative z-30`}
             aria-label="Main navigation"
           >
             <ul className="flex flex-col md:flex-row md:items-center mt-4 md:mt-0 space-y-3 md:space-y-0 md:space-x-8 text-base font-medium">
@@ -81,7 +81,7 @@ function Header({ cartCount = 0 }) {
               {/* Cart */}
               <li className="md:ml-6">
                 <Link
-                  to="/cart"
+                  to="/Cart"
                   onClick={closeMenu}
                   className="relative flex items-center px-3 py-2 rounded-md text-slate-700 dark:text-slate-100 hover:bg-yellow-50 hover:text-yellow-800 dark:hover:bg-yellow-900 dark:hover:text-yellow-200 transition-colors"
                 >
