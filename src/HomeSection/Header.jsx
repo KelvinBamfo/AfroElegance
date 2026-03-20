@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Shop", href: "/shop" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/Contact" },
 ];
 
 function Header({ cartCount = 0 }) {
