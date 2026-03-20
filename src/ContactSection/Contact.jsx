@@ -1,6 +1,6 @@
 import ContactForm from '../ContactSection/ContactForm'
 
-function Contact() {
+function contact() {
   return (
     <section className="bg-white dark:bg-neutral-900 text-slate-800 dark:text-slate-100 px-4 py-10 sm:px-6 md:px-12 lg:px-20">
       <div className="max-w-4xl mx-auto space-y-8">
@@ -79,4 +79,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default contact;

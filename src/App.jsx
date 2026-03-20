@@ -5,7 +5,7 @@ import Body from "./HomeSection/BodyPage";
 import Featured from "./HomeSection/FeaturedPage";
 import ProductCategories from "./ShopSection/Categories";
 import Products from "./ShopSection/Products";
-import Contact from "./ContactSection/Contact";
+import contact from "./ContactSection/Contact";
 import Cart from "./CartSection/Cart";
 import CategoryPage from "./ShopSection/CategoryPage";
 import Help from "./ContactSection/HelpSection";
@@ -41,7 +41,7 @@ function App() {
             }
           />
 
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/contact" element={<contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/productCategories/:slug" element={<CategoryPage />} />
         </Routes>
