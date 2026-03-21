@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from "../CartSection/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -34,6 +35,17 @@ const products = [
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setShowPopup(true);
+
+    // Auto-hide popup after 3 seconds
+    setTimeout(() => setShowPopup(false), 5000);
+  };
 
   return (
     <article
@@ -54,6 +66,7 @@ function ProductCard({ product }) {
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
       </div>
+
       <div className="flex flex-col flex-1 p-6">
         <h3
           id={product.title.replace(/\s+/g, '-').toLowerCase()}
@@ -69,7 +82,7 @@ function ProductCard({ product }) {
         </p>
 
         <button
-          onClick={() => addToCart(product)}
+          onClick={handleAddToCart}
           className="
             mt-6 inline-block self-start px-5 py-2 rounded-lg
             bg-brand text-black font-medium shadow
@@ -81,6 +94,29 @@ function ProductCard({ product }) {
           Add to Cart
         </button>
       </div>
+
+      {/* Popup */}
+      {showPopup && (
+        <div className="
+          fixed bottom-5 right-5 bg-white dark:bg-neutral-800 
+          shadow-lg rounded-lg p-4 border border-yellow-300 
+          z-50 animate-slide-up
+        ">
+          <p className="text-yellow-900 dark:text-yellow-300 font-medium">
+            Product Added.
+          </p>
+
+          <button
+            onClick={() => navigate("/cart")}
+            className="
+              mt-2 bg-yellow-600 text-white px-4 py-2 rounded-md 
+              hover:bg-yellow-700 transition
+            "
+          >
+            Go to Cart
+          </button>
+        </div>
+      )}
     </article>
   );
 }
