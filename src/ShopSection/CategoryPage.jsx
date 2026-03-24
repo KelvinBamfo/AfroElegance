@@ -17,12 +17,40 @@ function CategoryPage() {
   };
 
   const category = productCategories.find((cat) => cat.slug === slug);
+  const otherCategories = productCategories.filter((cat) => cat.slug !== slug);
+
 
   if (!category) {
     return <p className="text-center mt-10">Category not found.</p>;
   }
 
   return (
+    <>
+    <section className="mt-16">
+      <h3 className="text-2xl font-heading font-bold text-gray-900 m-3 mb-3">
+        Explore Other Categories
+      </h3>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0.5">
+        {otherCategories.map((cat) => (
+          <div
+            key={cat.slug}
+            className="bg-gray-100 rounded-bl-xs shadow-md p-3 m-3 hover:shadow-lg transition"
+          >
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              {cat.title}
+            </h4>
+            <p className="text-sm text-gray-600 mb-4">{cat.description}</p>
+            <button
+              onClick={() => navigate(`/productCategories/${cat.slug}`)}
+              className="bg-amber-300 text-black px-4 py-2 rounded-md hover:bg-amber-400 transition"
+            >
+              View {cat.title}
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
     <section className="max-w-7xl mx-auto px-4 py-12">
       <h2 className="text-3xl font-heading font-bold text-gray-900 mb-8">
         {category.title}
@@ -64,6 +92,7 @@ function CategoryPage() {
         ))}
       </div>
     </section>
+    </>
   );
 }
 
