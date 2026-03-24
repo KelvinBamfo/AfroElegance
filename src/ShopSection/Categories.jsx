@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import productCategories from "../data/productCategories";
 
+
 function ProductCard({ image, title, description, slug }) {
   return (
     <article

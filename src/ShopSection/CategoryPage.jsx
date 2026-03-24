@@ -1,10 +1,20 @@
 import { useParams } from "react-router-dom";
 import productCategories from "../data/productCategories";
 import { useCart } from "../CartSection/CartContext";
+import { useToast } from "../data/ToastContext";
+import { useNavigate } from "react-router-dom";
 
 function CategoryPage() {
   const { slug } = useParams();
   const { addToCart } = useCart();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
+
+    const handleAddToCart = (product) => {
+    addToCart(product);
+
+    showToast("Product added to cart!", () => navigate("/cart"));
+  };
 
   const category = productCategories.find((cat) => cat.slug === slug);
 
@@ -44,7 +54,7 @@ function CategoryPage() {
               </p>
 
               <button
-                onClick={() => addToCart(product)}
+                onClick={() => handleAddToCart(product)}
                 className="mt-6 bg-gray-300 text-gray-800 hover:scale-105 font-bold py-2 rounded-lg hover:bg-accent transition"
               >
                 Add to Cart

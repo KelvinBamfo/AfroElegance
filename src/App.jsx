@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastProvider } from "./data/ToastContext"
 import Header from "./HomeSection/Header";
 import Footer from "./HomeSection/Footer";
 import Body from "./HomeSection/BodyPage";
@@ -10,6 +11,7 @@ import Cart from "./CartSection/Cart";
 import CategoryPage from "./ShopSection/CategoryPage";
 import Help from "./ContactSection/HelpSection";
 import CartProvider from "./CartSection/CartContext";
+
 
 function HomePage() {
   return (
@@ -24,33 +26,34 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
-      <CartProvider>
-        <Header />
+      <Router>
+        <ToastProvider>
+          <CartProvider>
+            <Header />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
 
-          <Route
-            path="/shop"
-            element={
-              <>
-                <Products />
-                <ProductCategories />
-              </>
-            }
-          />
+              <Route
+                path="/shop"
+                element={
+                  <>
+                    <Products />
+                    <ProductCategories />
+                  </>
+                }
+              />
 
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/productCategories/:slug" element={<CategoryPage />} />
-        </Routes>
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/productCategories/:slug" element={<CategoryPage />} />
+            </Routes>
 
-        <Footer />
-      </CartProvider>
-    </Router>
+            <Footer />
+          </CartProvider>
+        </ToastProvider>
+      </Router>
   );
 }
 
 export default App;
-

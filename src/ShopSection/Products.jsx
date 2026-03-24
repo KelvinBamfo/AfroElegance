@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from "../CartSection/CartContext";
+import { useToast } from "../data/ToastContext"
 import { useNavigate } from "react-router-dom";
 
 const products = [
@@ -35,16 +36,13 @@ const products = [
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
+  const { showToast } = useToast();
   const navigate = useNavigate();
-
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleAddToCart = () => {
     addToCart(product);
-    setShowPopup(true);
 
-    // Auto-hide popup after 3 seconds
-    setTimeout(() => setShowPopup(false), 5000);
+    showToast("Product added to cart!", () => navigate("/cart"));
   };
 
   return (
@@ -94,29 +92,6 @@ function ProductCard({ product }) {
           Add to Cart
         </button>
       </div>
-
-      {/* Popup */}
-      {showPopup && (
-        <div className="
-          fixed bottom-5 right-5 bg-white dark:bg-neutral-800 
-          shadow-lg rounded-lg p-4 border border-yellow-300 
-          z-50 animate-slide-up
-        ">
-          <p className="text-yellow-900 dark:text-yellow-300 font-medium">
-            Product Added.
-          </p>
-
-          <button
-            onClick={() => navigate("/cart")}
-            className="
-              mt-2 bg-yellow-600 text-white px-4 py-2 rounded-md 
-              hover:bg-yellow-700 transition
-            "
-          >
-            Go to Cart
-          </button>
-        </div>
-      )}
     </article>
   );
 }
