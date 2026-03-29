@@ -26,26 +26,20 @@ function CategoryPage() {
 
   return (
     <>
-    <section className="mt-16">
-      <h3 className="text-2xl font-heading font-bold text-gray-900 m-3 mb-3">
+    <section className="mt-7">
+      <h3 className="text-2xl font-heading font-bold text-gray-900 m-3 mb-2">
         Explore Other Categories
       </h3>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0.5">
+      <div className="flex grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-0 gap-0.5">
         {otherCategories.map((cat) => (
           <div
             key={cat.slug}
-            className="bg-gray-100 rounded-bl-xs shadow-md p-3 m-3 hover:shadow-lg transition"
           >
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">
-              {cat.title}
-            </h4>
-            <p className="text-sm text-gray-600 mb-4">{cat.description}</p>
             <button
               onClick={() => navigate(`/productCategories/${cat.slug}`)}
-              className="bg-amber-300 text-black px-4 py-2 rounded-md hover:bg-amber-400 transition"
+              className="bg-gray-200 text-gray-700 font-medium px-4 py-1 rounded-2xl hover:bg-gray-300 hover:scale-105 hover:bg-accent shadow-md m-3 mb-1 hover:shadow-lg transition"
             >
-              View {cat.title}
+              {cat.title}
             </button>
           </div>
         ))}
@@ -77,13 +71,13 @@ function CategoryPage() {
                 {product.description}
               </p>
 
-              <p className="text-gray-900 font-bold text-lg mt-4">
+              <p className="text-gray-700 font-semibold text-lg mt-4">
                 Ghc{product.price}
               </p>
 
               <button
                 onClick={() => handleAddToCart(product)}
-                className="mt-6 bg-gray-300 text-gray-800 hover:scale-105 font-bold py-2 rounded-lg hover:bg-accent transition"
+                className="mt-6 bg-gray-200 text-gray-700 hover:scale-105 font-medium py-2 shadow-md rounded-2xl hover:bg-gray-300 hover:bg-accent transition"
               >
                 Add to Cart
               </button>

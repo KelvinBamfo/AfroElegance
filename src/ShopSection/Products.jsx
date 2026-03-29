@@ -65,7 +65,7 @@ function ProductCard({ product }) {
         />
       </div>
 
-      <div className="flex flex-col flex-1 p-6">
+      <div className="p-6 flex flex-col flex-1">
         <h3
           id={product.title.replace(/\s+/g, '-').toLowerCase()}
           className="font-heading text-lg font-semibold text-gray-900 mb-2"
@@ -73,21 +73,15 @@ function ProductCard({ product }) {
           {product.title}
         </h3>
 
-        <p className="text-gray-600 text-base">{product.description}</p>
+        <p className="text-gray-600 text-sm mt-2 flex-1">{product.description}</p>
 
-        <p className="text-gray-900 font-semibold text-lg mt-3">
+        <p className="text-gray-900 font-semibold text-lg mt-4">
           Ghc{product.price}
         </p>
 
         <button
           onClick={handleAddToCart}
-          className="
-            mt-6 inline-block self-start px-5 py-2 rounded-lg
-            bg-brand text-black font-medium shadow
-            transition-all duration-200
-            hover:bg-accent hover:shadow-lg
-            focus:outline-none focus:ring-2 focus:ring-brand
-          "
+          className="mt-6 bg-gray-200 text-gray-700 hover:scale-105 font-medium py-2 shadow-md rounded-2xl hover:bg-gray-300 hover:bg-accent transition"
         >
           Add to Cart
         </button>
@@ -99,11 +93,7 @@ function ProductCard({ product }) {
 function Products() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-heading font-bold text-gray-900 mb-8 text-center">
-        Discover AfroElegance
-      </h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-0">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

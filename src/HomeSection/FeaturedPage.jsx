@@ -18,7 +18,7 @@ const Featured = () => (
       <p className="text-base sm:text-lg md:text-xl font-normal text-gray-600 leading-relaxed max-w-2xl mx-auto md:mx-0 text-center md:text-left mb-8">
         Handpicked pieces that define elegance and sophistication
       </p>
-      <div className="mb-10">
+      <div className="mb-5">
         <Products />
       </div>
       <div className="flex justify-center md:justify-start">
