@@ -1,0 +1,38 @@
+export const products = [
+  {
+    id: 1,
+    title: 'Modern Straight Dress',
+    description: 'A modern straight dress outfits design to with African colors to enhance beauty and promote African culture.',
+    size: ["S", "M", "L", "XL"],
+    price: 500,
+    material: '100% Nilon',
+    image: '/items/red-dress.png',
+  },
+  {
+    id: 2,
+    title: 'Elegant Straight-flair Dress',
+    description: 'Stunning short dress which unvails real beauty.',
+    size: ["S", "M", "L", "XL"],
+    price: 400,
+    material: '100% Cotton',
+    image: '/items/dress.png',
+  },
+  {
+    id: 3,
+    title: 'Highwaist Roses',
+    description: 'A skirt made of simplicity and accompanied by freedom.',
+    size: ["S", "M", "L", "XL"],
+    price: 300,
+    material: '100% Cotton',
+    image: '/items/skirt.png',
+  },
+  {
+    id: 4,
+    title: 'Cool Leaf',
+    description: 'An outfit derived from the friendly and lovely African leafs mixed with cool African colors to define true identity.',
+    size: ["S", "M", "L", "XL"],
+    price: 450,
+    material: '100% Cotton',
+    image: '/items/short3.png',
+  },
+];

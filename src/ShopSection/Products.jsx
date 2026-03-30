@@ -2,35 +2,44 @@ import React, { useState } from 'react';
 import { useCart } from "../CartSection/CartContext";
 import { useToast } from "../data/ToastContext"
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const products = [
   {
     id: 1,
-    image: '/items/red-dress.png',
     title: 'Modern Straight Dress',
     description: 'A modern straight dress outfits design to with African colors to enhance beauty and promote African culture.',
-    price: 350,
+    size: ["S", "M", "L", "XL"],
+    price: 500,
+    material: '100% Nilon',
+    image: '/items/red-dress.png',
   },
   {
     id: 2,
-    image: '/items/dress.png',
     title: 'Elegant Straight-flair Dress',
-    description: 'Classic intercultural inspired dress, suitable for for office, meeting and many other events.',
-    price: 350,
+    description: 'Stunning short dress which unvails real beauty.',
+    size: ["S", "M", "L", "XL"],
+    price: 400,
+    material: '100% Cotton',
+    image: '/items/dress.png',
   },
   {
     id: 3,
+    title: 'Highwaist Roses',
+    description: 'A skirt made of simplicity and accompanied by freedom.',
+    size: ["S", "M", "L", "XL"],
+    price: 300,
+    material: '100% Cotton',
     image: '/items/skirt.png',
-    title: 'Ndebele Pattern Skirt',
-    description: 'Vivid geometric prints inspired by South Africa Ndebele heritage, reimagined for today.',
-    price: 350,
   },
   {
     id: 4,
+    title: 'Cool Leaf',
+    description: 'An outfit derived from the friendly and lovely African leafs mixed with cool African colors to define true identity.',
+    size: ["S", "M", "L", "XL"],
+    price: 450,
+    material: '100% Cotton',
     image: '/items/short3.png',
-    title: 'Classy Short',
-    description: 'Beautiful Ghanaian cultural colors inspired short.',
-    price: 350,
   },
 ];
 
@@ -46,6 +55,7 @@ function ProductCard({ product }) {
   };
 
   return (
+    <Link to={`/product/${product.id}`}>
     <article
       className="
         bg-white rounded-xl shadow-md overflow-hidden
@@ -87,6 +97,7 @@ function ProductCard({ product }) {
         </button>
       </div>
     </article>
+    </Link>
   );
 }
 

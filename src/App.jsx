@@ -11,7 +11,7 @@ import Cart from "./CartSection/Cart";
 import CategoryPage from "./ShopSection/CategoryPage";
 import Help from "./ContactSection/HelpSection";
 import CartProvider from "./CartSection/CartContext";
-
+import ProductDetails from "./ShopSection/ProductDetails";
 
 function HomePage() {
   return (
@@ -47,6 +47,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/productCategories/:slug" element={<CategoryPage />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
             </Routes>
 
             <Footer />
