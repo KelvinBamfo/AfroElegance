@@ -3,6 +3,8 @@ import productCategories from "../data/productCategories";
 import { useCart } from "../CartSection/CartContext";
 import { useToast } from "../data/ToastContext";
 import { useNavigate } from "react-router-dom";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 function CategoryPage() {
   const { slug } = useParams();
@@ -56,11 +58,13 @@ function CategoryPage() {
             key={product.id}
             className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
           >
+            <Zoom>
             <img
               src={product.image}
               alt={product.title}
               className="w-full h-64 object-cover"
             />
+            </Zoom>
 
             <div className="p-6 flex flex-col flex-1">
               <h3 className="font-heading text-lg font-semibold text-gray-900">

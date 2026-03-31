@@ -3,6 +3,8 @@ import { useCart } from "../CartSection/CartContext";
 import { useToast } from "../data/ToastContext"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 const products = [
   {
@@ -55,27 +57,30 @@ function ProductCard({ product }) {
   };
 
   return (
-    <Link to={`/product/${product.id}`}>
+    
     <article
       className="
         bg-white rounded-xl shadow-md overflow-hidden
-        flex flex-col transition-all duration-300
+        flex flex-col h-full transition-all duration-300
         hover:shadow-xl hover:-translate-y-1
         focus-within:ring-2 focus-within:ring-brand
       "
       tabIndex={-1}
       aria-labelledby={product.title.replace(/\s+/g, '-').toLowerCase()}
     >
-      <div className="aspect-square bg-gray-100 overflow-hidden">
+      <div className="h-64 bg-gray-100 overflow-hidden flex items-center justify-center">
+        <Zoom>
         <img
           src={product.image}
           alt={product.title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          className="object-contain max-h-full max-w-full"
         />
+        </Zoom>
       </div>
-
-      <div className="p-6 flex flex-col flex-1">
+      
+      <div className="p-6 m-0 flex flex-col flex-1">
+        <Link to={`/product/${product.id}`}>
         <h3
           id={product.title.replace(/\s+/g, '-').toLowerCase()}
           className="font-heading text-lg font-semibold text-gray-900 mb-2"
@@ -83,12 +88,13 @@ function ProductCard({ product }) {
           {product.title}
         </h3>
 
-        <p className="text-gray-600 text-sm mt-2 flex-1">{product.description}</p>
+        <p className="text-gray-600 text-sm mt-2 flex-1 line-clamp-2">{product.description}</p>
 
         <p className="text-gray-900 font-semibold text-lg mt-4">
           Ghc{product.price}
         </p>
-
+        </Link>
+        
         <button
           onClick={handleAddToCart}
           className="mt-6 bg-gray-200 text-gray-700 hover:scale-105 font-medium py-2 shadow-md rounded-2xl hover:bg-gray-300 hover:bg-accent transition"
@@ -97,7 +103,7 @@ function ProductCard({ product }) {
         </button>
       </div>
     </article>
-    </Link>
+    
   );
 }
 

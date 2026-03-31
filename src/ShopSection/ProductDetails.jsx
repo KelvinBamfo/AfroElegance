@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import { products } from "../data/products";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 
 function ProductDetails() {
@@ -9,16 +11,29 @@ function ProductDetails() {
   if (!product) return <p>Product not found.</p>;
 
   return (
-    <section className="max-w-4xl mx-auto p-6">
-      <img
-        src={product.image}
-        alt={product.title}
-        className="w-full h-96 object-cover rounded-xl"
-      />
+<section className="max-w-6xl mx-auto p-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-      <h1 className="text-3xl font-bold mt-6">{product.title}</h1>
+    {/* LEFT COLUMN — IMAGE */}
+    <div className="w-full flex items-center justify-center">
+      <Zoom>
+        <div className="w-full max-h-[600px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
+          <img
+            src={product.image}
+            alt={product.title}
+            className="object-contain w-full h-full"
+          />
+        </div>
+      </Zoom>
+    </div>
 
-      <p className="text-gray-700 mt-4">{product.description}</p>
+    {/* RIGHT COLUMN — DETAILS */}
+    <div className="flex flex-col justify-start">
+      <h1 className="text-3xl font-bold">{product.title}</h1>
+
+      <p className="text-gray-700 mt-4 leading-relaxed">
+        {product.description}
+      </p>
 
       <div className="mt-4">
         <strong>Sizes:</strong> {product.size.join(", ")}
@@ -28,8 +43,13 @@ function ProductDetails() {
         <strong>Material:</strong> {product.material}
       </div>
 
-      <p className="text-2xl font-semibold mt-6">Ghc{product.price}</p>
-    </section>
+      <p className="text-3xl font-semibold mt-6 text-brand">
+        Ghc{product.price}
+      </p>
+    </div>
+
+  </div>
+</section>
   );
 }
 
